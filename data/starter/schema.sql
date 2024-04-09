@@ -114,16 +114,16 @@ CREATE TABLE PicklistValue (
 	value varchar(30));
 
 -- read the CSV file into the table
-\copy Animal from 'Animal.csv' WITH DELIMITER ',' CSV HEADER;
+\copy Animal from 'data/starter/Animal.csv' WITH DELIMITER ',' CSV HEADER;
 
 -- read the CSV file into the table
-\copy Note from 'Note.csv' WITH DELIMITER ',' CSV HEADER;
+\copy Note from 'data/starter/Note.csv' WITH DELIMITER ',' CSV HEADER;
 
 -- read the CSV file into the table
-\copy SessionAnimalActivity from 'SessionAnimalActivity.csv' WITH DELIMITER ',' CSV HEADER;
+\copy SessionAnimalActivity from 'data/starter/SessionAnimalActivity.csv' WITH DELIMITER ',' CSV HEADER;
 
 -- read the CSV file into the table
-\copy SessionAnimalTrait from 'SessionAnimalTrait.csv' WITH DELIMITER ',' CSV HEADER;
+\copy SessionAnimalTrait from 'data/starter/SessionAnimalTrait.csv' WITH DELIMITER ',' CSV HEADER;
 
 -- read the CSV file into the table
-\copy PicklistValue from 'PicklistValue.csv' WITH DELIMITER ',' CSV HEADER;
+\copy PicklistValue from 'data/starter/PicklistValue.csv' WITH DELIMITER ',' CSV HEADER;
