@@ -1,0 +1,1020 @@
+picklistvalue_id,picklist_id,value
+1,1,"Destron Reader"
+2,1,"EID Standard Reader"
+3,2,"9600,8,1,N,None"
+4,3,"9600,8,1,N,None"
+5,4,"Racewell / Te Pari"
+7,4,"H-Dale / CWC"
+8,4,Prattley
+9,5,"9600,8,1,N,None"
+11,7,"9600,8,1,N,None"
+12,8,"9600,8,1,N,None"
+13,9,2400
+14,9,4800
+15,9,9600
+16,9,19200
+17,10,5
+18,10,6
+19,10,7
+20,10,8
+21,11,Even
+22,11,Odd
+23,11,None
+24,11,Mark
+25,11,Space
+26,12,1
+27,12,1.5
+28,12,2
+29,13,None
+30,13,Software
+31,13,Hardware
+32,14,Sex
+33,14,DOB
+34,14,Breed
+35,14,Colour
+36,14,Sire
+37,14,Dam
+38,14,"Original PIC"
+39,15,Sex
+40,15,DOB
+41,15,Breed
+42,15,Colour
+43,15,Sire
+44,15,Dam
+45,15,"Electronic ID"
+46,15,"Original Tag"
+47,15,"Original PIC"
+48,15,"NLIS Number"
+49,16,"5 in 1 Vacc"
+53,17,"Live Weight"
+54,17,_draft
+69,22,Male
+70,22,Female
+71,22,"Desexed M"
+72,22,"Desexed F"
+73,23,Angus
+74,23,Hereford
+75,23,Brahman
+76,23,Charolais
+81,26,"0 "
+82,26,0.0
+83,26,0.00
+84,26,0.000
+85,27,mm
+86,27,cm
+87,27,m
+88,27,%
+89,27,in
+90,27,ft
+91,27,yd
+92,27,days
+93,27,mg
+94,27,g
+95,27,kg
+96,27,lb
+97,27,ton
+98,27,mL
+99,27,L
+100,27,oz
+101,27,pt
+102,27,floz
+103,31,"Zebra QL Series"
+104,32,"9600,8,1,N,None"
+105,4,"Sheep Auto Drafter"
+106,33,"9600,8,1,N,None"
+109,35,"Data Logger Standard"
+110,36,"19200,8,1,N,Hardware"
+111,40,"Purchase Session"
+112,40,"Sale Session"
+113,40,"Induction Session"
+114,40,"Transfer Out Session"
+115,40,"Transfer In Session"
+116,40,"Cull Session"
+117,41,_event=Purchase
+118,42,_event=Sale
+119,43,_event=Birth
+120,44,"_event=Transfer Out"
+121,45,"_event=Transfer In"
+123,17,"Days on Feed Start"
+127,48,"OviScan Standard"
+128,49,"9600,8,1,N,None"
+135,29,Price
+136,23,Holstein
+137,23,Jersey
+138,23,JerHolX
+140,37,"Nyhof Farms"
+141,23,FleckX
+143,50,_whp=0
+144,50,_esi=0
+146,23,"Brown swiss"
+148,40,"Weighing Session"
+149,52,_event=Seen
+150,38,"Grunthal sale"
+151,28,NAME
+156,37,MIVELAZ
+168,58,_whp=0
+169,58,_esi=0
+172,59,_whp=0
+173,59,_esi=0
+175,60,_whp=0
+176,60,_esi=0
+178,61,_whp=0
+179,61,_esi=0
+181,62,_whp=0
+182,62,_esi=0
+183,23,Belted
+185,63,_whp=0
+186,63,_esi=0
+187,23,Fleckvieh
+189,64,_whp=0
+190,64,_esi=0
+192,65,_whp=0
+193,65,_esi=0
+195,66,_whp=0
+196,66,_esi=0
+198,67,_whp=0
+199,67,_esi=0
+201,68,_whp=0
+202,68,_esi=0
+204,16,Cull
+205,70,_whp=0
+206,70,_esi=0
+210,35,"Data Logger Ruddweigh"
+211,72,"9600,8,1,N,None"
+212,4,Custom
+213,4,Farmquip
+214,73,"9600,8,1,N,None"
+215,74,"9600,8,1,N,None"
+217,17,"Baby Bottle"
+221,17,"Death Date"
+225,17,"Death Info"
+226,77,"1 Winter Barn"
+227,77,"2 At Birth"
+228,77,"3 Within 24hrs"
+229,77,"4 After 24hrs"
+230,17,"Vigor Score"
+242,17,"Sore Mouth"
+246,17,"Wet or Dry"
+247,81,Dry
+248,81,Wet
+249,17,Condition
+250,82,1
+251,82,2
+252,82,3
+253,82,4
+254,82,5
+255,16,Drench
+353,17,"Birth Date"
+357,17,BWT
+365,17,WDDMM
+366,86,_datePrior=1
+367,86,_dateToday=1
+368,86,_dateGreater=1
+369,17,WWT
+370,87,_min=0
+371,87,_max=10000
+372,87,_prn=1
+373,87,_unt=lb
+374,87,_snd=Weight
+375,87,_isweight
+376,87,_liveweight=True
+377,17,EPDDMM
+378,88,_datePrior=1
+379,88,_dateToday=1
+380,88,_dateGreater=1
+381,17,EPWT
+389,17,PWDDMM
+390,90,_datePrior=1
+391,90,_dateToday=1
+392,90,_dateGreater=1
+393,17,PWWT
+401,17,YDDMM
+402,92,_datePrior=1
+403,92,_dateToday=1
+404,92,_dateGreater=1
+405,17,YWT
+413,17,YCF
+414,94,_min=0
+415,94,_max=100
+416,94,_prn=1
+417,94,_unt=
+418,94,_snd=
+426,17,YEMD
+427,95,_min=0
+428,95,_max=100
+429,95,_prn=1
+430,95,_unt=
+431,95,_snd=
+432,17,HDDMM
+433,96,_datePrior=1
+434,96,_dateToday=1
+435,96,_dateGreater=1
+436,17,HWT
+444,17,ADDMM
+445,98,_datePrior=1
+446,98,_dateToday=1
+447,98,_dateGreater=1
+448,17,AWT
+449,99,_min=0
+450,99,_max=10000
+451,99,_prn=1
+452,99,_unt=lb
+453,99,_snd=Weight
+454,99,_isweight
+455,99,_liveweight=True
+456,90,2013.10.13
+457,96,2014.12.10
+458,92,2014.05.20
+459,92,2014.05.10
+460,88,2014.10.10
+464,47,_datePrior=1
+465,47,_dateToday=1
+466,47,_dateGreater=1
+467,22,M
+468,22,F
+469,17,"Dam Observations"
+470,100,"1 No Problems"
+471,100,"2 Kids Slow to Start"
+472,100,"3 Weak Kids"
+473,100,"4 Ret Pacenta"
+474,100,"5 Other"
+475,17,"Dam Milk"
+476,101,"1 Good Milk"
+477,101,"2 Poor Milk"
+478,101,"3 No Milk"
+479,17,"Kid Ease"
+480,102,"0 Unobserved"
+481,102,"1 No Assist"
+482,102,"2 Some Assist"
+483,102,"3 Needed Pulling"
+484,102,"4 Adnormal Present"
+485,102,"5 Other/Dead Kid"
+486,17,"Num of Kids"
+487,103,"1 Single"
+488,103,"2 Twins"
+489,103,"3 Triplets"
+490,103,"4 Quads"
+495,17,"AUS Vigour"
+496,105,"1 Constant Strug"
+497,105,"2 Stug with Delay"
+498,105,"3 Strug Several Time"
+499,105,"4 Strug Once"
+500,105,"5 Little MovLies Rel"
+501,17,"AUS Mother Score"
+502,106,"1 Doe stays close"
+503,106,"2 Doe Retreats"
+504,106,"3 Ret Dif toRead 3-6"
+505,106,"4 Doe retreats 6plus"
+506,106,"5 Doe Flees"
+507,16,Biomycin
+508,107,_whp=0
+509,107,_esi=0
+510,16,"CIDR Insert"
+511,108,_whp=0
+512,108,_esi=0
+513,16,"Remove CIDR"
+514,109,_whp=0
+515,109,_esi=0
+516,17,"AI Time"
+518,17,"AI Doe Cond Notes"
+520,17,"Sire Semen Name"
+522,17,"Clean Up Buck Mark"
+523,113,Y
+524,113,N
+528,17,"1st Ultrasound Notes"
+533,17,"2nd Ultrasound Notes"
+535,17,"1st Ultrasound"
+536,118,1
+537,118,0
+538,17,"2nd Ultrasound"
+539,119,1
+540,119,0
+541,17,"Ultrasound Live Cov"
+542,120,1
+543,120,0
+544,17,Nickname
+546,17,"Dead Kid"
+548,17,Banding
+552,40,Dead
+553,124,_event=Death
+554,46,"_event=Transfer Out"
+560,17,"PMHQ Date"
+701,14,"Donor Dam"
+702,15,"Tag Number"
+703,15,Group
+704,15,Property
+705,15,Farm
+706,15,Area
+707,15,"Donor Dam"
+708,16,"CD AND T VACCINE"
+709,126,_whp=0
+710,126,_esi=0
+711,17,"Buck Prospect"
+713,23,BOER
+715,17,"Date pregtest"
+716,128,_datePrior=1
+717,128,_dateToday=1
+718,128,_dateGreater=1
+719,17,"Days pregnant"
+725,77,"intestinal abnormal"
+726,77,"out on range FTT"
+729,77,"Heart Defect"
+730,17,"Graft Baby"
+731,130,_alphaNumeric=20
+732,17,"Grafted Off"
+733,131,_alphaNumeric=20
+734,77,"Uterine Tear"
+735,17,"Good Graft Mom"
+736,132,yes
+737,16,Chlymidia/lepto/vibr
+738,133,_whp=0
+739,133,_esi=0
+740,17,MOTHERING
+741,134,_alphaNumeric=20
+742,77,"FTT NOT ENOUGH MILK"
+743,23,ARG
+744,23,COMMERCIAL
+745,16,"PG 600 Injection"
+746,135,_whp=0
+747,135,_esi=0
+748,17,"Insemination note"
+750,17,UB
+751,137,_datePrior=1
+752,137,_dateToday=1
+753,137,_dateGreater=1
+754,16,DL
+755,138,_whp=0
+756,138,_esi=0
+757,24,Black
+758,24,"Black White"
+759,24,Brown
+760,24,"Brown/white patch"
+761,24,Grey
+762,24,"light brown"
+763,24,Orange
+764,24,Red
+765,24,TRADITIONAL
+766,24,White
+767,132,No
+768,77,Premature
+769,100,"Twins premature dead"
+770,119,Yes
+771,119,2
+772,17,"US Live Cover"
+773,139,_min=0
+774,139,_max=100
+775,139,_prn=0
+776,139,_snd=
+777,139,_unt=
+778,25,94001009
+779,25,96400100
+780,16,"New Visual Tags"
+781,140,_whp=0
+782,140,_esi=0
+783,100,"Quads two doa"
+784,77,"abnormal presentatio"
+785,77,"Mom did not break AS"
+786,77,Mummified
+787,101,"OK milk"
+788,100,"One weak kid"
+789,77,"Only one good teat"
+790,102,"Big second kid"
+791,17,PMHQ
+792,141,_datePrior=1
+793,141,_dateToday=1
+794,141,_dateGreater=0
+795,22,Hermaphrodite
+796,16,"PMHQ INTRANASAL"
+797,142,_whp=0
+798,142,_esi=0
+802,17,"Buck prospect/banded"
+803,143,yes
+804,24,"Orange 16"
+805,16,"Lutalyse 2cc"
+806,144,_whp=0
+807,144,_esi=0
+808,16,Isobel
+809,145,_whp=0
+810,145,_esi=0
+811,16,Christopher
+812,146,_whp=0
+813,146,_esi=0
+814,16,"Use to breed 2016"
+815,147,_whp=0
+816,147,_esi=0
+817,101,"Slow to come in"
+818,77,"Died in utero"
+819,16,"Sort for shipping"
+820,148,_whp=0
+821,148,_esi=0
+822,77,Pneumonia
+823,16,Band
+824,149,_whp=0
+825,149,_esi=0
+826,16,Castorate/Band
+827,150,_whp=0
+828,150,_esi=0
+829,16,"Ship final"
+830,151,_whp=0
+831,151,_esi=0
+832,16,"Move to Golf pasture"
+833,152,_whp=0
+834,152,_esi=0
+835,16,"2017 AI Does"
+836,153,_whp=0
+837,153,_esi=0
+838,22,Wether
+839,16,"Research Wethers"
+840,154,_whp=0
+841,154,_esi=0
+842,16,"Ultra Sound"
+843,155,_whp=0
+844,155,_esi=0
+845,17,"Live Cover"
+846,17,AI
+847,17,pregnant
+848,158,_datePrior=1
+849,158,_dateToday=1
+850,158,_dateGreater=1
+851,17,Open
+852,159,_datePrior=1
+853,159,_dateToday=1
+854,159,_dateGreater=1
+855,16,"Change out tags"
+856,160,_whp=0
+857,160,_esi=0
+858,17,Preggnant
+859,161,_alphaNumeric=20
+860,40,"Tag Bucket"
+861,48,"Data Import Standard"
+862,163,"9600,8,1,N,None"
+863,25,FRED
+864,23,Cull
+865,17,"Breeding doette"
+866,164,Yes
+867,16,Wean
+868,165,_whp=0
+869,165,_esi=0
+870,17,"Breed 2018"
+871,166,Yes
+872,16,Lepto/vibrio
+873,167,_whp=0
+874,167,_esi=0
+875,16,"1st group breeding"
+876,168,_whp=0
+877,168,_esi=0
+878,16,"2nd breeding group"
+879,169,_whp=0
+880,169,_esi=0
+881,16,"3rd breeding group"
+882,170,_whp=0
+883,170,_esi=0
+884,16,"Easy Money"
+885,171,_whp=0
+886,171,_esi=0
+887,16,"Replace kid tags"
+888,172,_whp=0
+889,172,_esi=0
+890,17,"Nonorganic meds used"
+891,173,_alphaNumeric=20
+892,16,"First Kidding  GRP"
+893,174,_whp=0
+894,174,_esi=0
+895,16,"Second Kidding GRP"
+896,175,_whp=0
+897,175,_esi=0
+898,16,"Third Kidding GRP"
+899,176,_whp=0
+900,176,_esi=0
+901,16,"OPEN QUESTIONABLE"
+902,177,_whp=0
+903,177,_esi=0
+904,16,"OPEN 2019"
+905,178,_whp=0
+906,178,_esi=0
+907,23,"Bottle Baby 2018"
+908,17,Thiamine
+909,179,_alphaNumeric=20
+910,30,"1st BRD GRP"
+911,30,"2nd BRD GRP"
+912,30,"3rd BRD GRP"
+913,30,"4th BRD GRP"
+914,30,"5th BRD GRP"
+915,30,"6th BRD GRP"
+916,30,"7th BRD GRP"
+917,30,"8th BRD GRP"
+918,30,"9th BRD GRP"
+919,30,"10th BRD GRP"
+920,30,"11th BRD GRP"
+921,30,"12th BRD GRP"
+922,30,"13th BRD GRP"
+923,30,"14th BRD GRP"
+924,30,"15th BRD GRP"
+925,30,"16th BRD GRP"
+926,30,"17thBrd Grp"
+927,30,"17th BRD GRP"
+928,30,"18th BRD GRP"
+929,30,"19th BRD GRP"
+930,30,"20th BRD GRP"
+931,30,"AI 2018"
+932,24,SGM
+933,24,JAD
+934,100,"One dead kid"
+935,17,Mother
+936,180,"Good Mom"
+937,180,"Slow to Mother"
+938,180,Inattentive
+939,180,"1st Time Mom"
+940,180,"Wont Mother"
+941,132,"Kinnda crazy"
+942,100,"No Milk"
+949,16,Pepto
+950,181,_whp=0
+951,181,_esi=0
+952,17,"Project weight"
+953,182,_min=0
+954,182,_max=10000
+955,182,_prn=1
+956,182,_snd=Weight
+957,182,_unt=lb
+958,182,_isweight
+959,182,_liveweight=True
+960,16,"Kidding Barn"
+961,183,_whp=0
+962,183,_esi=0
+963,17,"Live wt"
+969,17,Weight
+970,17,"Turn out wt"
+985,184,_min=0
+986,184,_max=10000
+987,184,_prn=1
+988,184,_snd=Weight
+989,184,_unt=lb
+990,184,_isweight
+991,184,_liveweight=True
+992,186,_min=0
+993,186,_max=10000
+994,186,_prn=1
+995,186,_snd=Weight
+996,186,_unt=lb
+997,186,_isweight
+998,186,_liveweight=True
+999,16,"Insert Scrapie Tags"
+1000,187,_whp=0
+1001,187,_esi=0
+1007,157,AB046
+1008,157,MACHO
+1009,157,BOSS
+1010,157,AB041
+1011,157,133K
+1012,157,DUKE
+1013,157,AB076
+1014,157,HOOT
+1015,157,AB078
+1016,157,Blank
+1017,157,23BBG
+1018,17,"Ship wt Nov"
+1024,30,"AI 2019"
+1025,118,Pregnant
+1026,118,Late
+1027,118,Open
+1028,25,09987085
+1029,119,Open
+1030,119,Pregnant
+1036,22,cryptorchid
+1037,17,SELL
+1038,189,_alphaNumeric=20
+1039,17,Abort/miacarry
+1040,190,_alphaNumeric=20
+1041,17,Aborted
+1042,191,_alphaNumeric=20
+1043,16,Eexcede
+1044,192,_whp=0
+1045,192,_esi=0
+1046,16,Oxytocin
+1047,193,_whp=0
+1048,193,_esi=0
+1049,17,"Number of Fetuses"
+1050,194,_min=0
+1051,194,_max=5
+1052,194,_prn=0
+1053,194,_snd=
+1054,194,_unt=
+1055,17,"Abort note"
+1056,195,_alphaNumeric=20
+1057,17,"1st weight"
+1058,196,"Under 55 lbs"
+1059,17,"2nd weight"
+1060,197,"Over 55 lbs"
+1066,16,Nuflor
+1067,198,_whp=0
+1068,198,_esi=0
+1069,16,"Laceration repair"
+1070,199,_whp=0
+1071,199,_esi=0
+1072,17,"Discharge Daate"
+1073,200,_datePrior=0
+1074,200,_dateToday=1
+1075,200,_dateGreater=1
+1076,17,"Discharge Date"
+1077,201,_datePrior=0
+1078,201,_dateToday=1
+1079,201,_dateGreater=1
+1080,17,"Admission Date"
+1081,202,_datePrior=1
+1082,202,_dateToday=1
+1083,202,_dateGreater=0
+1084,16,Death
+1085,203,_whp=0
+1086,203,_esi=0
+1087,17,Re-admission
+1088,204,_alphaNumeric=20
+1089,17,Re-admit
+1090,205,_alphaNumeric=20
+1091,17,"Graft mom"
+1092,206,_alphaNumeric=20
+1093,16,died
+1094,207,_whp=0
+1095,207,_esi=0
+1096,17,"Kid with bad eye"
+1097,208,_alphaNumeric=20
+1098,30,"Bottle Babies"
+1099,180,"abandoned 1 kid"
+1100,16,"PMHQ Booster"
+1101,209,_whp=0
+1102,209,_esi=0
+1103,30,"Winter Barn F1"
+1104,16,"CD and T Booster"
+1105,210,_whp=0
+1106,210,_esi=0
+1107,30,"Winter Barn A1"
+1108,30,"Kidding barn"
+1109,30,"Winter barn E"
+1110,30,"Winter barn A2"
+1111,16,Chlamydia
+1112,211,_whp=0
+1113,211,_esi=0
+1114,17,"Breed 2020"
+1115,212,Yes
+1121,23,SOLD
+1122,23,LISA
+1128,16,Penacillin
+1129,213,_whp=0
+1130,213,_esi=0
+1131,16,Penicillin
+1132,214,_whp=0
+1133,214,_esi=0
+1134,16,"1 RING"
+1135,215,_whp=0
+1136,215,_esi=0
+1137,16,"2 Rings"
+1138,216,_whp=0
+1139,216,_esi=0
+1140,16,"3 Rings"
+1141,217,_whp=0
+1142,217,_esi=0
+1143,16,Difficult
+1144,218,_whp=0
+1145,218,_esi=0
+1146,17,"AB076 HOBARI"
+1147,219,_alphaNumeric=20
+1148,17,"AB041 RULU"
+1149,17,"AB078 BALSONKIVUMBE"
+1150,17,"AB046 BFG MAC"
+1151,17,"133K RED LEG TABU"
+1152,17,DUKE
+1153,17,MAC
+1154,17,MACHO
+1155,17,"BODACIOUS HOOT"
+1156,17,"BBR BOSS MAN"
+1157,157,"Mr yakimara"
+1158,157,Jingo
+1159,16,Abort
+1160,229,_whp=0
+1161,229,_esi=0
+1162,16,miscarry
+1163,230,_whp=0
+1164,230,_esi=0
+1203,16,"CD and T"
+1204,231,_whp=0
+1205,231,_esi=0
+1206,119,Late
+1207,16,Draxxin
+1208,232,_whp=0
+1209,232,_esi=0
+1210,16,Fever
+1211,233,_whp=0
+1212,233,_esi=0
+1213,17,"herd tag assigned"
+1214,234,Yes
+1215,16,"PMHQ IN"
+1216,235,_whp=0
+1217,235,_esi=0
+1218,16,"Sore mth"
+1219,236,_whp=0
+1220,236,_esi=0
+1221,17,Male
+1222,237,Yes
+1223,17,Female
+1224,238,Yes
+1225,77,Deformed
+1226,100,"Weak legs"
+1227,77,"small and cold"
+1228,77,"Birth defect"
+1229,77,"Mom laid on kid"
+1230,77,"Thin not eating"
+1231,77,"Smashed in wb"
+1232,77,"Did not suck"
+1233,77,"Weak legs euthanized"
+1234,77,"Trauma/Winter Barn"
+1235,77,"Stomach Ulceration"
+1236,77,"Clostridial infect"
+1237,17,"Testicals not decend"
+1238,239,Yes
+1242,17,BANDED
+1243,240,YES
+1249,28,"New Tag"
+1250,77,"Nuerological problem"
+1251,77,Intussusception
+1252,16,Ivermectin
+1253,241,_whp=0
+1254,241,_esi=0
+1255,24,Spotted
+1256,24,"Brd stk"
+1257,24,Comm
+1258,23,Comm
+1279,77,"Dead later"
+1280,77,"Old No Teeth"
+1281,77,Trauma
+1302,24,"AI 2021"
+1583,30,"21st BRD GRP"
+1584,30,"22nd BRD GRP"
+1585,30,"23rd BRD GRP"
+1586,30,"24th BRD GRP"
+1727,30,SPOTTIES
+1768,30,"AI 2021"
+1769,24,BLUE
+1770,24,GREEN
+1868,123,_datePrior=1
+1869,123,_dateToday=1
+1870,123,_dateGreater=1
+2066,112,_alphaNumeric=20
+2067,121,_alphaNumeric=20
+2068,136,_alphaNumeric=20
+2069,122,_alphaNumeric=20
+2070,127,_alphaNumeric=20
+2071,110,_alphaNumeric=20
+2072,111,_alphaNumeric=20
+2073,117,_alphaNumeric=20
+2074,115,_alphaNumeric=20
+2075,93,_min=0
+2076,93,_max=10000
+2077,93,_prn=1
+2078,93,_snd=Weight
+2079,93,_unt=lb
+2080,78,_min=0
+2081,78,_max=100
+2082,78,_prn=0
+2083,78,_snd=
+2084,78,_unt=
+2085,91,_min=0
+2086,91,_max=10000
+2087,91,_prn=1
+2088,91,_snd=Weight
+2089,91,_unt=lb
+2090,125,_min=0
+2091,125,_max=100
+2092,125,_prn=0
+2093,125,_snd=
+2094,125,_unt=
+2095,18,_min=0
+2096,18,_max=10000
+2097,18,_prn=1
+2098,18,_snd=Weight
+2099,18,_unt=lb
+2100,97,_min=0
+2101,97,_max=10000
+2102,97,_prn=1
+2103,97,_snd=Weight
+2104,97,_unt=lb
+2105,89,_min=0
+2106,89,_max=10000
+2107,89,_prn=1
+2108,89,_snd=Weight
+2109,89,_unt=lb
+2110,129,_min=0
+2111,129,_max=1000
+2112,129,_prn=0
+2113,129,_snd=
+2114,129,_unt=days
+2115,85,_min=0
+2116,85,_max=10000
+2117,85,_prn=1
+2118,85,_snd=Weight
+2119,85,_unt=lb
+2120,80,_datePrior=1
+2121,80,_dateToday=1
+2122,80,_dateGreater=1
+2123,76,_datePrior=1
+2124,76,_dateToday=1
+2125,76,_dateGreater=1
+2126,84,_datePrior=1
+2127,84,_dateToday=1
+2128,84,_dateGreater=1
+2129,75,_datePrior=1
+2130,75,_dateToday=1
+2131,75,_dateGreater=1
+2132,16,"AI 1ST GRP"
+2133,242,_whp=0
+2134,242,_esi=0
+2135,16,"AI 2nd group"
+2136,243,_whp=0
+2137,243,_esi=0
+2138,22,Unknown
+2139,30,.
+2140,77,"Bad teeth"
+2141,77,Trauma/accident
+2142,77,"Never grew cronic bl"
+2143,77,Bladderstone
+2144,16,VL5/Somnus
+2145,244,_whp=0
+2146,244,_esi=0
+2147,16,"CDT with Somnus"
+2148,245,_whp=0
+2149,245,_esi=0
+2150,196,"50 lbs or over"
+2151,197,"49 to 35 lbs"
+2152,17,"Keep 34lbs and under"
+2153,246,"35 and undee"
+2154,17,"Cull ship"
+2155,247,ship
+2156,180,"Only likes one kid"
+2157,100,"Twins premature"
+2158,180,"Good graft mom"
+2159,77,"Abdominal infection"
+2160,180,"Wouldnt mother weak"
+2161,101,"Only 1 udder works"
+2162,77,"Trauma Family Pen"
+2163,17,"Twisted gut"
+2164,77,"Twisted gut"
+2165,132,"0K graft Mom"
+2166,77,"Septed by accident"
+2167,77,Rotten
+2168,17,"Readmission Date"
+2169,249,_datePrior=1
+2170,249,_dateToday=1
+2171,249,_dateGreater=1
+2172,17,"Bottle Baby"
+2173,250,_datePrior=1
+2174,250,_dateToday=1
+2175,250,_dateGreater=1
+2176,77,"Stuck in BC"
+2177,77,"Hard pull"
+2178,17,"Weak kid"
+2179,251,_alphaNumeric=20
+2180,17,"limping kid"
+2181,252,_alphaNumeric=20
+2182,17,"Doe has sore teats"
+2183,253,_alphaNumeric=20
+2184,17,"Very little milk"
+2185,254,_alphaNumeric=20
+2186,17,"Doe wont feed 1 kid"
+2187,77,"Parrot Mouth"
+2188,17,"Broken bone"
+2189,256,_alphaNumeric=20
+2190,17,"Dischaged to:"
+2191,257,_alphaNumeric=20
+2192,17,"Readmission from:"
+2193,258,_alphaNumeric=20
+2194,77,Bloat
+2195,77,Diahrea
+2196,255,Yes
+2197,17,"Discharge dates"
+2198,259,_datePrior=1
+2199,259,_dateToday=1
+2200,259,_dateGreater=1
+2201,77,"Unknown no signs"
+2202,17,"Seperated from mom"
+2203,260,Yes
+2204,17,"Became BB"
+2205,261,Yes
+2206,261,"Yes 16223ER"
+2207,77,Absess
+2208,261,"Yes 17140A"
+2209,261,"Yes Brandon"
+2210,261,"20237XAG VERA"
+2211,17,Mastits
+2212,262,Yes
+2213,261,"20240B charlie"
+2214,261,"Yes brook 16192B"
+2215,77,Ascitis
+2216,17,"Parrot mouth"
+2217,263,Yes
+2218,17,"Sick mom"
+2219,264,Yes
+2220,17,"Body Condiion Score"
+2221,265,_min=0
+2222,265,_max=100
+2223,265,_prn=0
+2224,265,_snd=
+2225,265,_unt=
+2226,77,lysteriosis/bloat
+2227,17,"Body condton score"
+2228,17,"Wean 2022"
+2229,267,YES
+2230,17,"Keep to Breed"
+2231,268,Yes
+2232,17,"Weathers to butchee"
+2233,269,Yes
+2234,17,"Weathers to Butcher"
+2235,270,YES
+2236,17,"Open 1st US"
+2237,271,Open
+2238,17,"Pregnant 1st US"
+2239,272,Pregnant
+2240,17,"Pregnant 2nd US"
+2242,17,"Open 2nd US"
+2243,274,Open
+2244,273,Pregnant
+2245,17,"Abort/miscarry note"
+2246,275,Fever
+2247,275,"Foul smell"
+2248,275,"Deformed kids"
+2249,275,"Premature kids"
+2250,275,"No symptoms"
+2251,17,"Change out baby tag"
+2252,276,Yes
+2253,100,"Premature birth"
+2254,77,"Respretory distress"
+2255,77,"Umbilical infection"
+2256,77,"Retained placenta"
+2257,77,"Unknown no data"
+2258,77,"Uterine infection"
+2259,39,"Bottle BB"
+2260,24,MAW
+2261,77,"Intestinal infection"
+2262,24,PR
+2263,77,"Rumen Obstruction"
+2264,77,"Infected belly butto"
+2265,77,"Rotten stomach"
+2266,77,"Cleft pallet"
+2267,77,"Systemic infection"
+2268,77,Euthanized
+2269,17,"2nd readmit"
+2270,277,Yes
+2271,17,"Out with kid/s"
+2272,278,Yes
+2273,278,No
+2274,278,"Only 1"
+2275,278,"Only 2"
+2276,17,"Made bottle baby"
+2277,279,Yes
+2278,77,"Intestinal obstructi"
+2279,39,Graft
+2280,77,"Chronic Diarrhea"
+2281,77,"Head stuck in hole"
+2282,16,Keep
+2283,280,_whp=0
+2284,280,_esi=0
+2285,16,Abcess/lance/drain
+2286,281,_whp=0
+2287,281,_esi=0
+2288,16,Abcess/drain
+2289,282,_whp=0
+2290,282,_esi=0
+2291,16,Panacur
+2292,283,_whp=0
+2293,283,_esi=0
+2294,17,"Breed 2023"
+2295,284,Yes
+2296,284,No
+2297,16,"2nd AI Group"
+2298,285,_whp=0
+2299,285,_esi=0
+2300,16,"Colin 1"
+2301,286,_whp=0
+2302,286,_esi=0
+2303,16,"Colin 2"
+2304,287,_whp=0
+2305,287,_esi=0
+2306,16,Bleeding
+2307,288,_whp=0
+2308,288,_esi=0
+2309,16,Easy
+2310,289,_whp=0
+2311,289,_esi=0
+2312,16,AB078
+2313,290,_whp=0
+2314,290,_esi=0
+2315,16,"Cervical  abnormal"
+2316,291,_whp=0
+2317,291,_esi=0
+2318,77,"Head Stuck in Fence"
+2319,17,"Breeding Stock Does"
+2320,292,_alphaNumeric=20
+2321,17,"ARG Breeding Doeling"
+2322,293,_alphaNumeric=20
+2323,17,"ARG Breeding Stock"
+2324,294,_alphaNumeric=20
+2325,17,"Keep for SVR"
+2326,295,_alphaNumeric=20
