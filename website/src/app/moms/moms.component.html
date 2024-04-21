@@ -5,17 +5,17 @@
   </div>
   <table class="table table-striped">
     <thead>
-      <tr>
-        <th scope="col">Animal Id</th>
-        <th scope="col">Dam</th>
-        <th scope="col">Dam_Date</th>
+      <tr class="border-left-table">
+        <th scope="col" style="width: 5%;">Animal Id</th>
+        <th scope="col" style="width: 5%;">Dam</th>
+        <th scope="col" style="width: 20%;">Dam_Date</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let mom of moms">
+      <tr *ngFor="let mom of moms" class="border-left-table">
         <td>{{ mom.animal_id }}</td>
         <td>{{ mom.dam }}</td>
-        <td>{{ mom.dam_date }}</td>
+        <td>{{ this.getFormattedDate(mom.dam_date) }}</td>
       </tr>
     </tbody>
   </table>
