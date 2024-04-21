@@ -154,8 +154,8 @@ const median_avg_weight_yearly = (request, response) => {
                   SELECT
                       --AF.dob,
                       EXTRACT(YEAR from AW.last_weight_date) as Year,
-                      ROUND(AVG(num),2) AS "Average weight",
-                      percentile_cont(0.5) WITHIN GROUP (ORDER BY num) AS "Median weight"
+                      ROUND(AVG(num),2) AS avg,
+                      percentile_cont(0.5) WITHIN GROUP (ORDER BY num) AS median
                   
                   
                   FROM

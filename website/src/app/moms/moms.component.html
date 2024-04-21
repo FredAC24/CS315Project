@@ -1,9 +1,9 @@
 <div class="container">
-  <div>
-    <button class="btn" (click)="setView(0)">First Year Moms</button>
-    <button class="btn" (click)="setView(1)">Older Moms</button>
+  <div class="btn-group" role="group">
+    <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">First Year Moms</button>
+    <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Older Moms</button>
   </div>
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Animal Id</th>
