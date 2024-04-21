@@ -1,45 +1,8 @@
-const { Client } = require('pg');
-
-const client = new Client({
-  user: 'postgres',
-  password: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  database: 'proj'
-});
-
-client
-  .connect()
-  .then(() => console.log('Connected to the database'))
-  .catch((error) => console.error('Error connecting to the database', error));
-
 /**
  * @swagger
  * info:
  *  title: Queries
  * paths:
- *  /query/min_max_weight_yearly:
- *    get:
- *      tags: [Queries]
- *      description: Get the minimum and maximum weight of animals by year
- *      responses:
- *        200:
- *          description: A successful response
- *          content: application/json
- *        500:
- *          description: Internal server error
- *          content: application/json
- *  /query/median_avg_weight_yearly:
- *    get:
- *      tags: [Queries]
- *      description: Get the median and average weight of animals by year
- *      responses:
- *        200:
- *          description: A successful response
- *          content: application/json
- *        500:
- *          description: Internal server error
- *          content: application/json
  *  /query/moms/first_year_moms:
  *    get:
  *      tags: [Moms]
@@ -117,6 +80,11 @@ client
  *          description: Internal server error
  *          content: application/json
  */
+
+var client = null;
+function setClient(cli) {
+  client = cli;
+}
 
 const min_max_weight_yearly = (request, response) => {
   const query = `SELECT
@@ -242,10 +210,9 @@ const older_moms_count = (request, response) => {
 
 
 module.exports = {
-  min_max_weight_yearly,
-  median_avg_weight_yearly,
   first_year_moms,
   first_year_moms_count,
   older_moms,
   older_moms_count,
+  setClient
 };

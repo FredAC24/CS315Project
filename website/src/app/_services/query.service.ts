@@ -15,11 +15,11 @@ export class QueryService {
   private url = 'http://localhost:3000/query';
 
   min_max_weight_yearly(): Observable<MinMax[]> {
-    return this.httpClient.get<MinMax[]>(this.url + "/min_max_weight_yearly");
+    return this.httpClient.get<MinMax[]>(this.url + "/calc/min_max_weight_yearly");
   }
 
   median_avg_weight_yearly(): Observable<MedianAvg[]> {
-    return this.httpClient.get<MedianAvg[]>(this.url + "/median_avg_weight_yearly");
+    return this.httpClient.get<MedianAvg[]>(this.url + "/calc/median_avg_weight_yearly");
   }
 
   first_year_moms(page: number, pageLength?: number): Observable<Mom[]> {

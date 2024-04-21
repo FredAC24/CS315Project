@@ -2,9 +2,22 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
-const db = require('./routes/queries');
+
+const moms = require('./routes/moms');
+const calc = require('./routes/calculations');
+
 const swagger = require('./swagger');
 const cors = require('cors');
+
+const { Client } = require('pg');
+
+const client = new Client({
+  user: 'postgres',
+  password: 'postgres',
+  host: 'localhost',
+  port: 5432,
+  database: 'proj'
+});
 
 app.use(bodyParser.json());
 app.use(
@@ -19,12 +32,20 @@ app.get('/', (request, response) => {
   response.json({ info: 'Express API' });
 });
 
-app.get('/query/min_max_weight_yearly', db.min_max_weight_yearly);
-app.get('/query/median_avg_weight_yearly', db.median_avg_weight_yearly);
-app.get('/query/moms/first_year_moms', db.first_year_moms);
-app.get('/query/moms/first_year_moms_count', db.first_year_moms_count);
-app.get('/query/moms/older_moms', db.older_moms);
-app.get('/query/moms/older_moms_count', db.older_moms_count);
+client
+  .connect()
+  .then(() => console.log('Connected to the database'))
+  .catch((error) => console.error('Error connecting to the database', error));
+
+calc.setClient(client);
+moms.setClient(client);
+
+app.get('/query/calc/min_max_weight_yearly', calc.min_max_weight_yearly);
+app.get('/query/calc/median_avg_weight_yearly', calc.median_avg_weight_yearly);
+app.get('/query/moms/first_year_moms', moms.first_year_moms);
+app.get('/query/moms/first_year_moms_count', moms.first_year_moms_count);
+app.get('/query/moms/older_moms', moms.older_moms);
+app.get('/query/moms/older_moms_count', moms.older_moms_count);
 
 swagger(app);
 
