@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="btn-group" role="group">
+    <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">First Year Moms</button>
+    <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Older Moms</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr class="border-left-table">
+        <th scope="col" style="width: 5%;">Animal Id</th>
+        <th scope="col" style="width: 5%;">Dam</th>
+        <th scope="col" style="width: 20%;">Dam_Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mom of moms" class="border-left-table">
+        <td>{{ mom.animal_id }}</td>
+        <td>{{ mom.dam }}</td>
+        <td>{{ this.getFormattedDate(mom.dam_date) }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin: 0 auto 0 auto; width: fit-content;">
+    <ngb-pagination [collectionSize]="totalMoms" [(page)]="page" [pageSize]="pageSize" (pageChange)="getMoms(page)" [maxSize]="5" [boundaryLinks]="true" [rotate]="true">
+    </ngb-pagination>
+  </div>
+</div>

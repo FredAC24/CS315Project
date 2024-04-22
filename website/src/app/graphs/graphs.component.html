@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="btn-group" role="group">
+    <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">Min Max Weight</button>
+    <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Average Median Weight</button>
+  </div>
+  <div echarts [options]="options" class="main-chart"></div>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="border-left-table">
+          <th scope="col" style="width: 5%;">Year</th>
+          <th scope="col" style="width: 5%;">{{ view === 0 ?  "Min (lb)" : 'Average (lb)'}}</th>
+          <th scope="col" style="width: 20%;">{{ view != 1 ?  "Max (lb)" : 'Median (lb)'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let year of years; index as i" class="border-left-table">
+          <td>{{ year }}</td>
+          <td>{{ data[0][i] }}</td>
+          <td>{{ data[1][i] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
