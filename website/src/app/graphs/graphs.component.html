@@ -3,6 +3,7 @@
     <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">Min Max Weight</button>
     <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Average Median Weight</button>
   </div>
+  <!-- Graph -->
   <div echarts [options]="options" class="main-chart"></div>
   <div>
     <table class="table table-striped">

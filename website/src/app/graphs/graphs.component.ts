@@ -25,14 +25,15 @@ export class GraphsComponent {
 
   ngOnInit() {
     this.options = {};
+    // Gets the starter data for the min max graph
     this.queryService.min_max_weight_yearly().subscribe((data) => {
-      data.pop();
+      data.pop(); // Removes the last element which is always null
       this.convertMinMaxData(data);
     });
   }
 
-  setView(view: number) {
-    this.view = view;
+  setView(view: number) { // is triggered when the buttons at the top of the page are clicked
+    this.view = view;     // view is 0 for min/max and 1 for median/avg. this changes the data
     if (view === 0) {
       this.queryService.min_max_weight_yearly().subscribe((data) => {
         data.pop();
@@ -41,107 +42,52 @@ export class GraphsComponent {
     } else if (view === 1) {
       this.queryService.median_avg_weight_yearly().subscribe((data) => {
         data.pop();
-        this.convertAvgData(data);
+        this.convertMedAvgData(data);
       });
     }
   }
 
-  convertMinMaxData(data: MinMax[]) {
-    this.data = [[], []];
-    this.years = [];
+  convertMinMaxData(data: MinMax[]) { // converts the min/max data into a format that can be used by the chart
+    this.data = [[], []];             // having an unspecfic data array and years array allows for the chart
+    this.years = [];                  // to be reused for both min/max and median/avg
     data.forEach(e => {
       this.data[0].push(e.minbyyear);
       this.data[1].push(e.maxbyyear);
       this.years.push(e.year);
     });
-    this.createMinMaxChart();
+    this.createChart();
   }
 
-  createMinMaxChart() {
-    this.options = {
-      legend: {
-        data: ['Min Weight', 'Max Weight']
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'cross'
-        }
-      },
-      xAxis: {
-        type: 'category',
-        data: this.years,
-        axisTick: {
-          alignWithLabel: true
-        }
-      },
-      yAxis: [
-        {
-          type: 'value',
-          name: 'Weight',
-          axisLabel: {
-            formatter: '{value} lbs'
-          },
-          min: 0,
-          max: 300
-        },
-        {
-          type: 'value',
-          name: 'Weight',
-          axisLabel: {
-            formatter: '{value} lbs'
-          },
-          min: 0,
-          max: 300
-        }
-      ],
-      series: [
-        {
-          name: 'Min Weight',
-          data: this.data[0],
-          type: 'line',
-          yAxisIndex: 0
-        },
-        {
-          name: 'Max Weight',
-          data: this.data[1],
-          type: 'line',
-          yAxisIndex: 1
-        }
-      ]
-    }
-  }
-
-  convertAvgData(data: MedianAvg[]) {
+  convertMedAvgData(data: MedianAvg[]) { // converts the median/avg data into a format that can be used by the chart
     this.data = [[], []];
     this.years = [];
     data.forEach(e => {
-      this.data[0].push(e.median);
-      this.data[1].push(e.avg);
+      this.data[0].push(e.avg);
+      this.data[1].push(e.median);
       this.years.push(e.year);
     });
-    this.createAvgChart();
+    this.createChart();
   }
 
-  createAvgChart() {
+  createChart() {
     this.options = {
-      legend: {
-        data: ['Average Weight', 'Median Weight']
+      legend: { // legend is the top part that shows the colors of the lines
+        data: [(this.view === 0 ? 'Min Weight' : 'Average Weight'), (this.view === 0 ? 'Max Weight' : 'Median Weight')] // changes the legend based on the view
       },
-      tooltip: {
+      tooltip: { // tooltip is the box that shows up when you hover over a point
         trigger: 'axis',
         axisPointer: {
           type: 'cross'
         }
       },
-      xAxis: {
+      xAxis: { // shows the years on the x axis
         type: 'category',
         data: this.years,
         axisTick: {
           alignWithLabel: true
         }
       },
-      yAxis: [
+      yAxis: [ // shows the weight on the y axis, need one for both data sets
         {
           type: 'value',
           name: 'Weight',
@@ -161,15 +107,15 @@ export class GraphsComponent {
           max: 300
         }
       ],
-      series: [
+      series: [ // the data that is shown on the graph
         {
-          name: 'Average Weight',
+          name: (this.view === 0 ? 'Min Weight' : 'Average Weight'), // changes the name based on the view
           data: this.data[0],
           type: 'line',
           yAxisIndex: 0
         },
         {
-          name: 'Median Weight',
+          name: (this.view === 0 ? 'Max Weight' : 'Median Weight'), // changes the name based on the view
           data: this.data[1],
           type: 'line',
           yAxisIndex: 1
