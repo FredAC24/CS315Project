@@ -12,6 +12,7 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Creates a row for each mom in the moms array -->
       <tr *ngFor="let mom of moms" class="border-left-table">
         <td>{{ mom.animal_id }}</td>
         <td>{{ mom.dam }}</td>
@@ -20,6 +21,7 @@
     </tbody>
   </table>
   <div style="margin: 0 auto 0 auto; width: fit-content;">
+    <!-- Creates the page selection at the bottom -->
     <ngb-pagination [collectionSize]="totalMoms" [(page)]="page" [pageSize]="pageSize" (pageChange)="getMoms(page)" [maxSize]="5" [boundaryLinks]="true" [rotate]="true">
     </ngb-pagination>
   </div>

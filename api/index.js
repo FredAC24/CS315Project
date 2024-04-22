@@ -11,6 +11,7 @@ const cors = require('cors');
 
 const { Client } = require('pg');
 
+// connects to postgres
 const client = new Client({
   user: 'postgres',
   password: 'postgres',
@@ -26,20 +27,27 @@ app.use(
   })
 );
 
+// add cors
 app.use(cors());
 
+// default route
 app.get('/', (request, response) => {
   response.json({ info: 'Express API' });
 });
 
+// connect to the database
 client
   .connect()
   .then(() => console.log('Connected to the database'))
   .catch((error) => console.error('Error connecting to the database', error));
 
+// pass the client to the routes stored in other files
 calc.setClient(client);
 moms.setClient(client);
 
+// routes
+// sets the api functions to specific routes
+// functions found in ./routes/*.js
 app.get('/query/calc/min_max_weight_yearly', calc.min_max_weight_yearly);
 app.get('/query/calc/median_avg_weight_yearly', calc.median_avg_weight_yearly);
 app.get('/query/moms/first_year_moms', moms.first_year_moms);
@@ -47,8 +55,10 @@ app.get('/query/moms/first_year_moms_count', moms.first_year_moms_count);
 app.get('/query/moms/older_moms', moms.older_moms);
 app.get('/query/moms/older_moms_count', moms.older_moms_count);
 
+// creates the swagger page for the api using options from swagger.js
 swagger(app);
 
+// listen on port 3000
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });

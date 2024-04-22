@@ -14,6 +14,10 @@ export class QueryService {
 
   private url = 'http://localhost:3000/query';
 
+  // All functions return an observable that can be triggered to contact the API
+  // Can call this function followed by .subscribe(data => { // do something with data });
+  // Good example in moms.component.ts
+
   min_max_weight_yearly(): Observable<MinMax[]> {
     return this.httpClient.get<MinMax[]>(this.url + "/calc/min_max_weight_yearly");
   }
