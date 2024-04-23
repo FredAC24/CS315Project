@@ -79,6 +79,17 @@
  *        500:
  *          description: Internal server error
  *          content: application/json
+ *  /query/moms/avg_moms_by_year:
+ *    get:
+ *      tags: [Moms]
+ *      description: Averages moms by year
+ *      responses:
+ *        200:
+ *          description: A successful response
+ *          content: application/json
+ *        500:
+ *          description: Internal server error
+ *          content: application/json
  */
 
 var client = null;
@@ -208,11 +219,33 @@ const older_moms_count = (request, response) => {
   });
 };
 
+const avg_moms_by_year = (request, response) => {
+  const query = `SELECT
+                    'FIRST YEAR MOMS' as MOM_TYPE,
+                    ROUND(AVG(CAST(NULLIF(AW.last_weight,'') AS DECIMAL)), 2) AS AVG_Weight_of__dams
+                  FROM FirstYearMoms as FM
+                  join Animal_weight as AW on AW.animal_id = FM.animal_id
+                  UNION ALL
+                  select
+                    'OLDER MOMS' as MOM_TYPE,
+                    ROUND(AVG(CAST(NULLIF(AW.last_weight,'') AS DECIMAL)),2) AS AVG_Weight_of__dams
+                  FROM OlderMoms as OM
+                  join Animal_weight as AW on AW.animal_id = OM.animal_id;`
+  client.query(query, (error, result) => {
+    if (error) {
+      response.status(500).json({ error: error });
+    } else {
+      response.status(200).json(result.rows);
+    }
+  });
+}
+
 
 module.exports = {
   first_year_moms,
   first_year_moms_count,
   older_moms,
   older_moms_count,
+  avg_moms_by_year,
   setClient
 };

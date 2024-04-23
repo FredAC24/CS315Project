@@ -45,3 +45,15 @@ where
    AND AF.dam !=''
    AND AF.sex = 'Female'
    AND EXTRACT(Year from CURRENT_DATE) - EXTRACT(year from AF.dob) >1;
+
+CREATE OR REPLACE VIEW Female_goats_dam as
+SELECT
+   AF.animal_id,
+   EXTRACT(YEAR FROM dob) AS birth_year,
+   EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT(YEAR FROM dob) AS current_year
+FROM
+   Animal_facts AS AF
+WHERE
+   AF.dam IS NOT NULL
+   AND AF.dam !=''
+   AND AF.sex = 'Female';

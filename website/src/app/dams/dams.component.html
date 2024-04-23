@@ -1,0 +1,19 @@
+<div class="container">
+  <div echarts [options]="options" class="main-chart"></div>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="border-left-table">
+          <th scope="col" style="width: 5%;">Year</th>
+          <th scope="col" style="width: 5%;">Avg Weight (lb)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let year of data[1]; index as i" class="border-left-table">
+          <td>{{ year }}</td>
+          <td>{{ data[0][i] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

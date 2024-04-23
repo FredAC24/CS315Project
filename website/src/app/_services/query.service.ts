@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Mom } from '../_models/mom.model';
 import { MinMax } from '../_models/min_max.model';
 import { MedianAvg } from '../_models/median_avg.model';
+import { AvgParentWeight } from '../_models/avg_parent_weight.model';
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,13 @@ export class QueryService {
 
   older_moms_count(): Observable<number> {
     return this.httpClient.get<number>(this.url + "/moms/older_moms_count");
+  }
+
+  avg_moms_by_year(): Observable<Object[]> {
+    return this.httpClient.get<Object[]>(this.url + "/moms/avg_moms_by_year");
+  }
+
+  avg_weight_of_parent_yearly(): Observable<AvgParentWeight[]> {
+    return this.httpClient.get<AvgParentWeight[]>(this.url + "/dams/avg_weight_of_parent_yearly");
   }
 }
