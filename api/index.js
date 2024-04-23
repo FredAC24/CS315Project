@@ -5,6 +5,7 @@ const port = 3000;
 
 const moms = require('./routes/moms');
 const calc = require('./routes/calculations');
+const dams = require('./routes/dams');
 
 const swagger = require('./swagger');
 const cors = require('cors');
@@ -44,6 +45,7 @@ client
 // pass the client to the routes stored in other files
 calc.setClient(client);
 moms.setClient(client);
+dams.setClient(client);
 
 // routes
 // sets the api functions to specific routes
@@ -54,6 +56,8 @@ app.get('/query/moms/first_year_moms', moms.first_year_moms);
 app.get('/query/moms/first_year_moms_count', moms.first_year_moms_count);
 app.get('/query/moms/older_moms', moms.older_moms);
 app.get('/query/moms/older_moms_count', moms.older_moms_count);
+app.get('/query/moms/avg_moms_by_year', moms.avg_moms_by_year);
+app.get('/query/dams/avg_weight_of_parent_yearly', dams.avg_weight_of_parent_yearly);
 
 // creates the swagger page for the api using options from swagger.js
 swagger(app);

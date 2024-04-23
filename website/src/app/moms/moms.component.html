@@ -1,4 +1,5 @@
 <div class="container">
+  <div echarts [options]="options" class="main-chart"></div>
   <div class="btn-group" role="group">
     <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">First Year Moms</button>
     <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Older Moms</button>
