@@ -5,6 +5,8 @@ import { Mom } from '../_models/mom.model';
 import { MinMax } from '../_models/min_max.model';
 import { MedianAvg } from '../_models/median_avg.model';
 import { AvgParentWeight } from '../_models/avg_parent_weight.model';
+import { Goat } from '../_models/goat.model';
+import { AllTypesAvg, SinglesAvgYearly, TripletsAvgYearly, TwinsAvgYearly } from '../_models/twins.model';
 
 @Injectable({
   providedIn: 'root'
@@ -59,5 +61,37 @@ export class QueryService {
 
   avg_weight_of_parent_yearly(): Observable<AvgParentWeight[]> {
     return this.httpClient.get<AvgParentWeight[]>(this.url + "/dams/avg_weight_of_parent_yearly");
+  }
+
+  get_goat_by_tag(tag: string): Observable<Goat[]> {
+    return this.httpClient.get<Goat[]>(this.url + "/goats/get_goat_by_tag", {
+      params: {
+        tag: tag
+      }
+    });
+  }
+
+  get_goat_by_id(id: number): Observable<Goat[]> {
+    return this.httpClient.get<Goat[]>(this.url + "/goats/get_goat_by_id", {
+      params: {
+        id: id.toString()
+      }
+    });
+  }
+
+  avg_weight_of_all_types(): Observable<AllTypesAvg[]> {
+    return this.httpClient.get<AllTypesAvg[]>(this.url + "/twins/avg_weight_of_all_types");
+  }
+
+  avg_weight_singles_yearly(): Observable<SinglesAvgYearly[]> {
+    return this.httpClient.get<SinglesAvgYearly[]>(this.url + "/twins/avg_weight_singles_yearly");
+  }
+
+  avg_weight_twins_yearly(): Observable<TwinsAvgYearly[]> {
+    return this.httpClient.get<TwinsAvgYearly[]>(this.url + "/twins/avg_weight_twins_yearly");
+  }
+
+  avg_weight_triplets_yearly(): Observable<TripletsAvgYearly[]> {
+    return this.httpClient.get<TripletsAvgYearly[]>(this.url + "/twins/avg_weight_triplets_yearly");
   }
 }

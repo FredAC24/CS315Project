@@ -16,7 +16,7 @@
       <!-- Creates a row for each mom in the moms array -->
       <tr *ngFor="let mom of moms" class="border-left-table">
         <td>{{ mom.animal_id }}</td>
-        <td>{{ mom.dam }}</td>
+        <td><a [routerLink]="['/goat', mom.dam]">{{ mom.dam }}</a></td>
         <td>{{ this.getFormattedDate(mom.dam_date) }}</td>
       </tr>
     </tbody>
