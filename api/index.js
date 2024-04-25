@@ -6,6 +6,8 @@ const port = 3000;
 const moms = require('./routes/moms');
 const calc = require('./routes/calculations');
 const dams = require('./routes/dams');
+const goats = require('./routes/goats');
+const twins = require('./routes/twins');
 
 const swagger = require('./swagger');
 const cors = require('cors');
@@ -46,6 +48,8 @@ client
 calc.setClient(client);
 moms.setClient(client);
 dams.setClient(client);
+goats.setClient(client);
+twins.setClient(client);
 
 // routes
 // sets the api functions to specific routes
@@ -58,6 +62,12 @@ app.get('/query/moms/older_moms', moms.older_moms);
 app.get('/query/moms/older_moms_count', moms.older_moms_count);
 app.get('/query/moms/avg_moms_by_year', moms.avg_moms_by_year);
 app.get('/query/dams/avg_weight_of_parent_yearly', dams.avg_weight_of_parent_yearly);
+app.get('/query/goats/get_goat_by_tag', goats.get_goat_by_tag);
+app.get('/query/goats/get_goat_by_id', goats.get_goat_by_id);
+app.get('/query/twins/avg_weight_of_all_types', twins.avg_weight_of_all_types);
+app.get('/query/twins/avg_weight_singles_yearly', twins.avg_weight_singles_yearly);
+app.get('/query/twins/avg_weight_twins_yearly', twins.avg_weight_twins_yearly);
+app.get('/query/twins/avg_weight_triplets_yearly', twins.avg_weight_triplets_yearly);
 
 // creates the swagger page for the api using options from swagger.js
 swagger(app);

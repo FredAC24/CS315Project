@@ -5,7 +5,7 @@ import { Mom } from '../_models/mom.model';
 import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { EChartsOption } from 'echarts';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-moms',
@@ -13,7 +13,8 @@ import { EChartsOption } from 'echarts';
   imports: [
     CommonModule,
     NgbPagination,
-    NgxEchartsDirective
+    NgxEchartsDirective,
+    RouterModule
   ],
   templateUrl: './moms.component.html',
   styleUrl: './moms.component.scss',
@@ -100,6 +101,12 @@ export class MomsComponent {
     this.options = {
       legend: { // legend is the top part that shows the colors of the lines
         data: ['Average Weight']
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
       },
       xAxis: { // shows the labels on the x axis
         type: 'category',
