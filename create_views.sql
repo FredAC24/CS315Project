@@ -142,3 +142,10 @@ where AF.dob IN(
    having count(*)=1
 ) and AF.dam!=''
 order by AF.dam;
+
+CREATE OR REPLACE VIEW Birth_Weights AS
+SELECT animal_id, trait_code, alpha_value, alpha_units FROM sessionanimaltrait 
+WHERE trait_code = '357'
+AND alpha_value IS NOT NULL
+AND alpha_value != ''
+AND alpha_value::numeric > 0;
