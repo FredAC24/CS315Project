@@ -3,7 +3,8 @@ import { QueryService } from '../_services/query.service';
 import { EChartsOption } from 'echarts';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsModule, provideEcharts } from 'ngx-echarts';
-import { AllTypesAvg } from '../_models/twins.model';
+import { AllTypesAvg, AvgYearly } from '../_models/twins.model';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-twins',
@@ -27,31 +28,23 @@ export class TwinsComponent {
   options2: EChartsOption;
 
   ngOnInit() {
-    this.queryService.avg_weight_of_all_types().subscribe(data => {
-      this.overallAvg = data;
+    forkJoin([this.queryService.avg_weight_of_all_types(), this.queryService.avg_weight_singles_yearly(), this.queryService.avg_weight_twins_yearly(), this.queryService.avg_weight_triplets_yearly()]).subscribe(([overallAvg, singles, twins, triplets]) => {
+      this.processData("single", singles);
+      this.processData("twin", twins);
+      this.processData("triplet", triplets);
+      this.overallAvg = overallAvg;
       this.createChart();
     });
-
-    this.queryService.avg_weight_singles_yearly().subscribe(data => {
-      this.processData("single", data);
-    })
-    this.queryService.avg_weight_twins_yearly().subscribe(data => {
-      this.processData("twin", data);
-    })
-    this.queryService.avg_weight_triplets_yearly().subscribe(data => {
-      this.processData("triplet", data);
-    })
-
   }
 
-  processData(type: string, data: any[]) {
+  processData(type: string, data: AvgYearly[]) {
     data.forEach(avg_year => {
-      if (type === "single") this.singlesAvg.push(avg_year.avg_weight_of_singles);
-      else if (type === "twin") this.twinsAvg.push(avg_year.avg_weight_of_twins);
-      else if (type === "triplet") this.tripletsAvg.push(avg_year.avg_weight_of_triplets);
       if (this.years.findIndex((year) => year === avg_year.year) === -1) {
         this.years.push(avg_year.year);
       }
+      if (type === "single") this.singlesAvg[this.years.findIndex((year) => year === avg_year.year)] = avg_year.average;
+      else if (type === "twin") this.twinsAvg[this.years.findIndex((year) => year === avg_year.year)] = avg_year.average;
+      else if (type === "triplet") this.tripletsAvg[this.years.findIndex((year) => year === avg_year.year)] = avg_year.average;
     });
   }
 
@@ -84,7 +77,7 @@ export class TwinsComponent {
             formatter: '{value} lbs'
           },
           min: 0,
-          max: 250
+          max: 15
         }
       ],
       series: [ // the data that is shown on the graph
@@ -92,19 +85,22 @@ export class TwinsComponent {
           name: ('Singles'), // changes the name based on the view
           data: this.singlesAvg,
           type: 'line',
-          yAxisIndex: 0
+          yAxisIndex: 0,
+          connectNulls: true
         },
         {
           name: ('Twins'), // changes the name based on the view
           data: this.twinsAvg,
           type: 'line',
-          yAxisIndex: 0
+          yAxisIndex: 0,
+          connectNulls: true
         },
         {
           name: ('Triplets'), // changes the name based on the view
           data: this.tripletsAvg,
           type: 'line',
-          yAxisIndex: 0
+          yAxisIndex: 0,
+          connectNulls: true
         }
       ]
     };
@@ -137,25 +133,25 @@ export class TwinsComponent {
             formatter: '{value} lbs'
           },
           min: 0,
-          max: 150
+          max: 10
         }
       ],
       series: [ // the data that is shown on the graph
         {
           name: ('Singles'), // changes the name based on the view
-          data: [this.overallAvg[0].avg_weight_of_singles],
+          data: [this.overallAvg[0].average],
           type: 'bar',
           yAxisIndex: 0
         },
         {
           name: ('Twins'), // changes the name based on the view
-          data: [this.overallAvg[2].avg_weight_of_singles],
+          data: [this.overallAvg[1].average],
           type: 'bar',
           yAxisIndex: 0
         },
         {
           name: ('Triplets'), // changes the name based on the view
-          data: [this.overallAvg[1].avg_weight_of_singles],
+          data: [this.overallAvg[2].average],
           type: 'bar',
           yAxisIndex: 0
         }

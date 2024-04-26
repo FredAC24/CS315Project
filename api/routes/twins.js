@@ -56,23 +56,21 @@ function setClient(cli) {
 }
 
 const avg_weight_of_all_types = (request, response) => {
-  const query = `select
-                'Singles' as group_type,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2) as avg_weight_of_singles
-                from Animal_weight as AW
-                JOIN ACTUALSINGLES as SA on SA.animal_id = AW.animal_id
+  const query = `SELECT 'Singles' AS group_type,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualsingles
+                  NATURAL JOIN birth_weights
                 UNION ALL
-                select
-                'Twins' as group_type,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2) as avg_weight_of_twins
-                from Animal_weight as AW
-                join ACTUALTWINS as AT on AT.animal_id = AW.animal_id
+                SELECT 'Twins' as group_type,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualtwins
+                  NATURAL JOIN birth_weights
                 UNION ALL
-                select
-                'Triples' as group_type,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2)as avg_weight_of_triplets
-                from Animal_weight as AW
-                join ACTUALTRIPLETS as ATT on ATT.animal_id = AW.animal_id;`;
+                SELECT 'Triplets' as group_type,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualtriplets
+                  NATURAL JOIN birth_weights;
+                `;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -83,13 +81,11 @@ const avg_weight_of_all_types = (request, response) => {
 };
 
 const avg_weight_singles_yearly = (request, response) => {
-  const query = `select
-                EXTRACT (YEAR FROM AW.last_weight_date) as Year,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2) as avg_weight_of_singles
-                from Animal_weight as AW
-                join ACTUALSINGLES as SA ON SA.animal_id = AW.animal_id
-                where AW.last_weight !=''
-                group by Year;`;
+  const query = `SELECT EXTRACT(YEAR FROM dob) as year,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualsingles
+                  NATURAL JOIN birth_weights
+                GROUP BY year`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -100,13 +96,11 @@ const avg_weight_singles_yearly = (request, response) => {
 };
 
 const avg_weight_twins_yearly = (request, response) => {
-  const query = `select
-                EXTRACT (YEAR from AW.last_weight_date) as Year,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2) as avg_weight_of_twins
-                from Animal_weight as AW
-                join ACTUALTWINS as AT on AT.animal_id = AW.animal_id
-                where AW.last_weight !=''
-                group by Year;`;
+  const query = `SELECT EXTRACT(YEAR FROM dob) as year,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualtwins
+                  NATURAL JOIN birth_weights
+                GROUP BY year`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -117,13 +111,11 @@ const avg_weight_twins_yearly = (request, response) => {
 };
 
 const avg_weight_triplets_yearly= (request, response) => {
-  const query = `select
-                EXTRACT (YEAR from AW.last_weight_date) as Year,
-                ROUND(AVG(CAST(NULLIF(AW.last_weight,'')as decimal)),2)as avg_weight_of_triplets
-                from Animal_weight as AW
-                join ACTUALTRIPLETS AS ATT on ATT.animal_id = AW.animal_id
-                where AW.last_weight!=''
-                group by Year;`;
+  const query = `SELECT EXTRACT(YEAR FROM dob) as year,
+                  ROUND(AVG(alpha_value::numeric), 2) as average
+                FROM actualtriplets
+                  NATURAL JOIN birth_weights
+                GROUP BY year;`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });

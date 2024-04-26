@@ -31,7 +31,7 @@ const avg_weight_of_parent_yearly = (request, response) => {
                 join Animal_weight as AW on AW.animal_id = F.animal_id
                 where F.birth_year <= 2023
                 group by birth_year
-                order by birth_year ASC;--`;
+                order by birth_year ASC;`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });

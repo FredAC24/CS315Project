@@ -6,7 +6,7 @@ import { MinMax } from '../_models/min_max.model';
 import { MedianAvg } from '../_models/median_avg.model';
 import { AvgParentWeight } from '../_models/avg_parent_weight.model';
 import { Goat } from '../_models/goat.model';
-import { AllTypesAvg, SinglesAvgYearly, TripletsAvgYearly, TwinsAvgYearly } from '../_models/twins.model';
+import { AllTypesAvg, AvgYearly } from '../_models/twins.model';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +59,14 @@ export class QueryService {
     return this.httpClient.get<Object[]>(this.url + "/moms/avg_moms_by_year");
   }
 
+  avg_first_year_moms(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.url + "/moms/avg_first_year_moms");
+  }
+
+  avg_older_moms(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.url + "/moms/avg_older_moms");
+  }
+
   avg_weight_of_parent_yearly(): Observable<AvgParentWeight[]> {
     return this.httpClient.get<AvgParentWeight[]>(this.url + "/dams/avg_weight_of_parent_yearly");
   }
@@ -83,15 +91,15 @@ export class QueryService {
     return this.httpClient.get<AllTypesAvg[]>(this.url + "/twins/avg_weight_of_all_types");
   }
 
-  avg_weight_singles_yearly(): Observable<SinglesAvgYearly[]> {
-    return this.httpClient.get<SinglesAvgYearly[]>(this.url + "/twins/avg_weight_singles_yearly");
+  avg_weight_singles_yearly(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_singles_yearly");
   }
 
-  avg_weight_twins_yearly(): Observable<TwinsAvgYearly[]> {
-    return this.httpClient.get<TwinsAvgYearly[]>(this.url + "/twins/avg_weight_twins_yearly");
+  avg_weight_twins_yearly(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_twins_yearly");
   }
 
-  avg_weight_triplets_yearly(): Observable<TripletsAvgYearly[]> {
-    return this.httpClient.get<TripletsAvgYearly[]>(this.url + "/twins/avg_weight_triplets_yearly");
+  avg_weight_triplets_yearly(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_triplets_yearly");
   }
 }
