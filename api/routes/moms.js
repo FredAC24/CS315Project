@@ -79,14 +79,25 @@
  *        500:
  *          description: Internal server error
  *          content: application/json
- *  /query/moms/avg_moms_by_year:
+ *  /query/moms/avg_first_year_moms:
  *    get:
  *      tags: [Moms]
- *      description: Averages moms by year
+ *      description: Get the average birth weight of first year moms
  *      responses:
  *        200:
  *          description: A successful response
+ *          content: text/html
+ *        500:
+ *          description: Internal server error
  *          content: application/json
+ *  /query/moms/avg_older_moms:
+ *    get:
+ *      tags: [Moms]
+ *      description: Get the average birth weight of older moms
+ *      responses:
+ *        200:
+ *          description: A successful response
+ *          content: text/html
  *        500:
  *          description: Internal server error
  *          content: application/json
@@ -110,7 +121,7 @@ const first_year_moms = (request, response) => {
   }
 
 
-  const query = `SELECT * FROM FirstYearMoms LIMIT ${pageLength} OFFSET ${pageLength * (page - 1)};`;
+  const query = `SELECT * FROM NewerMoms LIMIT ${pageLength} OFFSET ${pageLength * (page - 1)};`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -121,7 +132,7 @@ const first_year_moms = (request, response) => {
 };
 
 const first_year_moms_count = (request, response) => {
-  const query = `SELECT COUNT(*) FROM FirstYearMoms;`;
+  const query = `SELECT COUNT(*) FROM NewerMoms;`;
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -164,18 +175,25 @@ const older_moms_count = (request, response) => {
   });
 };
 
-const avg_moms_by_year = (request, response) => {
-  const query = `SELECT
-                    'FIRST YEAR MOMS' as MOM_TYPE,
-                    ROUND(AVG(CAST(NULLIF(AW.last_weight,'') AS DECIMAL)), 2) AS AVG_Weight_of__dams
-                  FROM FirstYearMoms as FM
-                  join Animal_weight as AW on AW.animal_id = FM.animal_id
-                  UNION ALL
-                  select
-                    'OLDER MOMS' as MOM_TYPE,
-                    ROUND(AVG(CAST(NULLIF(AW.last_weight,'') AS DECIMAL)),2) AS AVG_Weight_of__dams
-                  FROM OlderMoms as OM
-                  join Animal_weight as AW on AW.animal_id = OM.animal_id;`
+const avg_first_year_moms = (request, response) => {
+  const query = `select
+                'NEWERMOMS' as group_type,
+                ROUND(AVG(CAST(NULLIF(NMBWT.alpha_value,'')as decimal)),2) as avg_weight_of_newer_moms
+                from NEWERMOMSBWT as NMBWT;`
+  client.query(query, (error, result) => {
+    if (error) {
+      response.status(500).json({ error: error });
+    } else {
+      response.status(200).json(result.rows);
+    }
+  });
+}
+
+const avg_older_moms = (request, response) => {
+  const query = `select
+                'OLDERMOMS' as group_type,
+                ROUND(AVG(CAST(NULLIF(OMBWT.alpha_value,'')as decimal )),2) as avg_weight_of_older_moms
+                from OLDERMOMSBWT as OMBWT;`
   client.query(query, (error, result) => {
     if (error) {
       response.status(500).json({ error: error });
@@ -186,11 +204,13 @@ const avg_moms_by_year = (request, response) => {
 }
 
 
+
 module.exports = {
   first_year_moms,
   first_year_moms_count,
   older_moms,
   older_moms_count,
-  avg_moms_by_year,
+  avg_first_year_moms,
+  avg_older_moms,
   setClient
 };

@@ -59,6 +59,14 @@ export class QueryService {
     return this.httpClient.get<Object[]>(this.url + "/moms/avg_moms_by_year");
   }
 
+  avg_first_year_moms(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.url + "/moms/avg_first_year_moms");
+  }
+
+  avg_older_moms(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.url + "/moms/avg_older_moms");
+  }
+
   avg_weight_of_parent_yearly(): Observable<AvgParentWeight[]> {
     return this.httpClient.get<AvgParentWeight[]>(this.url + "/dams/avg_weight_of_parent_yearly");
   }

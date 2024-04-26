@@ -22,30 +22,6 @@ CREATE OR REPLACE VIEW Animal_Note AS
 SELECT AN.created, AN.note, AN.animal_id
 FROM Note AS AN;
 
-CREATE OR REPLACE VIEW FirstYearMoms as
-select
-AF.animal_id,
-EXTRACT(Year from AF.dob),
-AF.dam,
-AF.dam_date
-from Animal_facts as AF
-where AF.dam IS NOT NULL
-   and AF.sex = 'Female'
-   AND EXTRACT(Year from CURRENT_DATE) - EXTRACT(year from AF.dob) = 1;
-
-
-CREATE OR REPLACE VIEW OlderMoms as
-select AF.animal_id,
-EXTRACT(Year from AF.dob) as Olderdams,
-AF.dam,
-AF.dam_date
-from Animal_facts as AF
-where
-   AF.dam IS NOT NULL
-   AND AF.dam !=''
-   AND AF.sex = 'Female'
-   AND EXTRACT(Year from CURRENT_DATE) - EXTRACT(year from AF.dob) >1;
-
 CREATE OR REPLACE VIEW Female_goats_dam as
 SELECT
    AF.animal_id,
@@ -149,3 +125,35 @@ WHERE trait_code = '357'
 AND alpha_value IS NOT NULL
 AND alpha_value != ''
 AND alpha_value::numeric > 0;
+
+DROP VIEW IF EXISTS FirstYearMoms;
+DROP VIEW IF EXISTS OlderMoms;
+
+CREATE OR REPLACE VIEW TESTING_ANIMAL AS
+SELECT TA.animal_id,TA.tag,TA.dam, TA.dob
+from ANIMAL as TA;
+
+CREATE OR REPLACE VIEW BroadMotherData as
+select AF.animal_id, AF.tag,AF.dam, AF.dob, AF.sex, AF.dam_date
+from Animal_facts as AF
+join TESTING_ANIMAL as TA on TA.tag = AF.dam;
+
+CREATE OR REPLACE VIEW OLDERMOMS as
+select * from BroadMotherData 
+where EXTRACT (YEAR FROM CURRENT_DATE)-EXTRACT(YEAR FROM dob)>1 and sex = 'Female';
+
+CREATE OR REPLACE VIEW NEWERMOMS as
+select * from BroadMotherData
+where EXTRACT(YEAR FROM dob) = '2023' AND sex = 'Female';
+
+CREATE OR REPLACE VIEW OLDERMOMSBWT as
+select OM.animal_id,ST.alpha_value,ST. alpha_units,ST.when_measured
+from OLDERMOMS as OM
+join SessionAnimalTrait as ST on ST.animal_id = OM.animal_id
+where ST. trait_code = '357';
+
+CREATE OR REPLACE VIEW NEWERMOMSBWT as
+select NM.animal_id, NM.tag, ST.alpha_value,ST.alpha_units,ST.when_measured
+from NEWERMOMS as NM
+join SessionAnimalTrait as ST on ST.animal_id = NM.animal_id
+where ST.trait_code = '357';
