@@ -65,10 +65,14 @@ app.get('/query/moms/avg_older_moms', moms.avg_older_moms);
 app.get('/query/dams/avg_weight_of_parent_yearly', dams.avg_weight_of_parent_yearly);
 app.get('/query/goats/get_goat_by_tag', goats.get_goat_by_tag);
 app.get('/query/goats/get_goat_by_id', goats.get_goat_by_id);
-app.get('/query/twins/avg_weight_of_all_types', twins.avg_weight_of_all_types);
-app.get('/query/twins/avg_weight_singles_yearly', twins.avg_weight_singles_yearly);
-app.get('/query/twins/avg_weight_twins_yearly', twins.avg_weight_twins_yearly);
-app.get('/query/twins/avg_weight_triplets_yearly', twins.avg_weight_triplets_yearly);
+app.get('/query/twins/birth/avg_weight_of_all_types', twins.avg_weight_of_all_types);
+app.get('/query/twins/birth/avg_weight_singles_yearly', twins.avg_weight_singles_yearly);
+app.get('/query/twins/birth/avg_weight_twins_yearly', twins.avg_weight_twins_yearly);
+app.get('/query/twins/birth/avg_weight_triplets_yearly', twins.avg_weight_triplets_yearly);
+app.get('/query/twins/current/avg_weight_of_all_types', twins.avg_weight_of_all_types_current);
+app.get('/query/twins/current/avg_weight_singles_yearly', twins.avg_weight_of_singles_current);
+app.get('/query/twins/current/avg_weight_twins_yearly', twins.avg_weight_of_twins_current);
+app.get('/query/twins/current/avg_weight_triplets_yearly', twins.avg_weight_of_triplets_current);
 
 // creates the swagger page for the api using options from swagger.js
 swagger(app);

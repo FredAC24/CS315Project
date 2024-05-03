@@ -1,4 +1,10 @@
 <div class="container">
-  <div echarts [options]="options" class="main-chart"></div>
-  <div echarts [options]="options2" class="main-chart"></div>
+  <div class="btn-group" role="group">
+    <button class="btn" [ngClass]="{'btn-primary': view === 0, 'btn-outline-primary': view != 0}" (click)="setView(0)">At Birth</button>
+    <button class="btn" [ngClass]="{'btn-primary': view === 1, 'btn-outline-primary': view != 1}" (click)="setView(1)">Current</button>
+  </div>
+  <div class="pt-3">
+    <div echarts [options]="options" [merge]="updateOptions" class="main-chart"></div>
+    <div echarts [options]="options2" [merge]="updateOptions2" class="main-chart"></div>
+  </div>
 </div>

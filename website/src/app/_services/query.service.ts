@@ -88,18 +88,34 @@ export class QueryService {
   }
 
   avg_weight_of_all_types(): Observable<AllTypesAvg[]> {
-    return this.httpClient.get<AllTypesAvg[]>(this.url + "/twins/avg_weight_of_all_types");
+    return this.httpClient.get<AllTypesAvg[]>(this.url + "/twins/birth/avg_weight_of_all_types");
   }
 
   avg_weight_singles_yearly(): Observable<AvgYearly[]> {
-    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_singles_yearly");
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/birth/avg_weight_singles_yearly");
   }
 
   avg_weight_twins_yearly(): Observable<AvgYearly[]> {
-    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_twins_yearly");
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/birth/avg_weight_twins_yearly");
   }
 
   avg_weight_triplets_yearly(): Observable<AvgYearly[]> {
-    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/avg_weight_triplets_yearly");
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/birth/avg_weight_triplets_yearly");
+  }
+
+  avg_weight_of_all_types_current(): Observable<AllTypesAvg[]> {
+    return this.httpClient.get<AllTypesAvg[]>(this.url + "/twins/current/avg_weight_of_all_types");
+  }
+
+  avg_weight_singles_current(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/current/avg_weight_singles_yearly");
+  }
+
+  avg_weight_twins_current(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/current/avg_weight_twins_yearly");
+  }
+
+  avg_weight_triplets_current(): Observable<AvgYearly[]> {
+    return this.httpClient.get<AvgYearly[]>(this.url + "/twins/current/avg_weight_triplets_yearly");
   }
 }

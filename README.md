@@ -13,7 +13,5 @@ Noah Springer, Freddy Avila Cruz, Michael Oflazian
 - Noah is responsible for the web and API code, questions about it can be directed towards him.
 - API was built using Express.js and documentation was created with Swagger and can be accessed at `localhost:3000/api-docs` while the API is running.
 
-### GUI
-![1](./img/Screenshot_20240422_222108.png)
-![2](./img/Screenshot_20240422_222118.png)
-![3](./img/Screenshot_20240422_222132.png)
+### Wiki
+You can find the wiki [here](https://github.com/TCNJ-degoodj/project-group08/wiki).
