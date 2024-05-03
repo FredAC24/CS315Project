@@ -2,7 +2,7 @@
 Noah Springer, Freddy Avila Cruz, Michael Oflazian
 ### Install and Dependencies
 1. Install Node.js and npm:
-  Arch: `pacman -S nodejs npm`
+   - Arch: `pacman -S nodejs npm`
 2. Run `init.sh` to setup the database and install dependencies
 ### Running
 1. Run `start_api.sh` to run the Postgres API.
